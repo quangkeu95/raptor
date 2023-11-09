@@ -1,14 +1,20 @@
-[package]
-name = "example"
-description = "A new binary crate"
+[workspace]
+members = ["bin/*"]
+default-members = ["bin/raptor"]
+resolver = "2"
+
+[workspace.package]
+description = "Trading at Raptor speed"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-authors = ["Nguyen Le Quang"]
-repository = "https://github.com/Nguyen Le Quang/example"
-homepage = "https://github.com/Nguyen Le Quang/example"
+authors = ["quangkeu95"]
+repository = "https://github.com/quangkeu95/raptor"
+homepage = "https://github.com/quangkeu95/raptor"
+exclude = ["**/target", "benches", "tests"]
+include = ["bin/*", "crates/*", "etc"]
 
-[dependencies]
+[workspace.dependencies]
 anyhow = "1.0.75"
 inquire = "0.6.2"
 tracing = "0.1.40"
